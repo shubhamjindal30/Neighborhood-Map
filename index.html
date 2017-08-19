@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/sidebar.css">
+      <link rel="stylesheet" href="css/main.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+      <script src="js/jquery-3.2.1.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="http://knockoutjs.com/downloads/knockout-3.4.2.js"></script>
+      <script src="js/master.js"></script>
+    <title>Neighbourhood Map</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li>
+            <div class="searchBar">
+              <input id="input" placeholder="Search Location" data-bind="value: searchFunc, valueUpdate: 'afterkeydown' ,event: {keyup: search}" /><br>
+              <ul data-bind="foreach: markers">
+                <!-- ko if: show -->
+                <li id="links" data-bind="text: name,click: $parent.setSelected"></li>
+                <!-- /ko -->
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div id="map"></div>
+      <div id="error">
+        <h3 data-bind="text: errorMessage"></h3>
+      </div>
+        <a href="#menu-toggle" class="btn btn-default pull-right" id="menu-toggle">SEARCH</a>
+    </div>
+      <script>
+      $("#menu-toggle").click(function(obj) {
+          obj.preventDefault();
+          $("#wrapper").toggleClass("toggled");
+      });
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDd-gpd-jxVRUYYvsIJx0CziAzOr0NdOMI&callback=initMap" onerror="Error()" async defer></script>
+      <footer>
+            <div class="text-center">
+                <p class="foot">Made by <a href="https://www.linkedin.com/in/shubhamjindal30" target="_blank" class="name">Shubham Jindal</a></p>
+                </div>
+            </footer>
+  </body>
+</html>

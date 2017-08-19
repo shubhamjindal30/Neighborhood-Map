@@ -1,0 +1,41 @@
+body {
+    background-color: cornsilk;
+}
+
+#map {
+  height: 80vh;
+  width: 100%
+}
+
+#links {
+  padding-left: 30px;
+  font-size: 20px;
+}
+
+#input{
+  margin: 15px 15px 15px 15px;
+  font-size: 15px;
+}
+
+.foot {
+    padding-top: 45px;
+    font-size: 1.3em;
+    color: #666756;
+}
+
+@media screen and (max-width: 600px;) {
+  .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #map {
+    width: 100%;
+  }
+  input {
+    font-size: 100%
+  }
+  #searchBar {
+    width: 70%;
+    font-size: 100%;
+  }
+}
